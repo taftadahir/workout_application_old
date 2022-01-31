@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/workout_application.dart';
 
 // App Entry point
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Workout App',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const Scaffold(),
-      );
-}
+void main() => runApp(const WorkoutApplication());
