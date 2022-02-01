@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/configs/colors.dart';
 
 class PrimaryButtonComponent extends StatelessWidget {
   final String text;
@@ -9,10 +10,10 @@ class PrimaryButtonComponent extends StatelessWidget {
 
   const PrimaryButtonComponent({
     Key? key,
-    this.backgroundColor = const Color(0xFF545FFF),
+    this.backgroundColor = primaryColor,
     required this.onPressed,
     this.text='',
-    this.textColor = const Color(0xFFFFFFFF),
+    this.textColor = whiteColor,
     this.child,
   }) : super(key: key);
 

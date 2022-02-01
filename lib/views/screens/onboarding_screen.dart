@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/configs/colors.dart';
 import 'package:workout_application_development/controllers/onboarding_controller.dart';
 import 'package:workout_application_development/models/onboarding_model.dart';
 import 'package:workout_application_development/views/components/dot_component.dart';
@@ -56,7 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           : IconButton(
                               icon:
                                   const Icon(Icons.arrow_back_ios_new_rounded),
-                              color: const Color(0xFF545FFF),
+                              color: blackLightColor,
                               onPressed: () {
                                 _controller.previousPage(
                                   duration: const Duration(microseconds: 100),
@@ -77,7 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xFF000000),
+                                  color: blackLightColor,
                                 ),
                               ),
                             ),

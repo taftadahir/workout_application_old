@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/configs/colors.dart';
 
 class DotComponent extends StatelessWidget {
   final int currentIndex;
@@ -12,8 +13,8 @@ class DotComponent extends StatelessWidget {
     Key? key,
     required this.currentIndex,
     required this.index,
-    this.selectedColor = const Color(0xFF545FFF),
-    this.unselectedColor = const Color(0xFFF3F4F8),
+    this.selectedColor = primaryColor,
+    this.unselectedColor = whiteLightColor,
     this.selectedWidth = 32.0,
     this.dotHeight = 10.0,
   }) : super(key: key);

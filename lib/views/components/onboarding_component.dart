@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:workout_application_development/configs/colors.dart';
 import 'package:workout_application_development/models/onboarding_model.dart';
 
 class OnboardingComponent extends StatelessWidget {
@@ -26,6 +27,7 @@ class OnboardingComponent extends StatelessWidget {
             style: const TextStyle(
               fontSize: 32.0,
               fontWeight: FontWeight.w800,
+              color: blackColor,
             ),
           ),
         ),
@@ -35,7 +37,7 @@ class OnboardingComponent extends StatelessWidget {
           style: const TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.w400,
-            color: Colors.grey,
+            color: blackLightColor,
           ),
         ),
       ],
