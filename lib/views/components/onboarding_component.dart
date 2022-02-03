@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:workout_application_development/configs/colors.dart';
 import 'package:workout_application_development/models/onboarding_model.dart';
@@ -14,6 +15,7 @@ class OnboardingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         SvgPicture.asset(
@@ -34,6 +36,8 @@ class OnboardingComponent extends StatelessWidget {
         Text(
           data.description,
           textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.w400,
