@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/configs/behaviors.dart';
 import 'package:workout_application_development/configs/colors.dart';
 import 'package:workout_application_development/controllers/onboarding_controller.dart';
 import 'package:workout_application_development/models/onboarding_model.dart';
@@ -38,6 +39,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ? Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: ListView(
+                  physics: physics,
                   children: [
                     ...getOnboardingScreenContent(),
                   ],
@@ -99,7 +101,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         SizedBox(
           height: 350.0,
           child: PageView.builder(
-            physics: const BouncingScrollPhysics(),
+            physics: physics,
             controller: _controller,
             onPageChanged: (int index) {
               setState(() {
