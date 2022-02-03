@@ -12,37 +12,38 @@ class PrimaryButtonComponent extends StatelessWidget {
     Key? key,
     this.backgroundColor = primaryColor,
     required this.onPressed,
-    this.text='',
+    this.text = '',
     this.textColor = whiteColor,
     this.child,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: child ??
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.normal,
-                color: textColor,
-              ),
-            ),
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0),
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: child ??
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.normal,
+              color: textColor,
             ),
           ),
-          backgroundColor: MaterialStateProperty.all(
-            backgroundColor,
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(64.0),
           ),
-          elevation: MaterialStateProperty.all(
-            0.0,
-          ),
+        ),
+        minimumSize: MaterialStateProperty.all(
+          const Size.fromWidth(double.infinity),
+        ),
+        backgroundColor: MaterialStateProperty.all(
+          backgroundColor,
+        ),
+        elevation: MaterialStateProperty.all(
+          0.0,
         ),
       ),
     );
