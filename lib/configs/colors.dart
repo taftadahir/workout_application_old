@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/configs/parameters.dart';
 
-const Color primaryColor = Color(0xFF545FFF);
-const Color whiteColor = Color(0xFFFFFFFF);
-const Color whiteLightColor = Color(0xFFF3F4F8);
-const Color blackColor = Color(0xFF000000);
-const Color blackLightColor = Color(0xFF000000);
-const Color greyColor = Colors.grey;
-const Color errorColor = Colors.red;
-const Color successColor = Colors.green;
+const Color primaryColor = prmPrimaryColor ?? Color(0xFF545FFF);
+const Color whiteColor = prmWhiteColor ?? Color(0xFFFFFFFF);
+const Color whiteLightColor = prmWhiteLightColor ?? Color(0xFFF3F4F8);
+const Color blackColor = prmBlackColor ?? Color(0xFF000000);
+const Color blackLightColor = prmBlackLightColor ?? Color(0xFF000000);
+const Color greyColor = prmGreyColor ?? Colors.grey;
+const Color errorColor = prmErrorColor ?? Colors.red;
+const Color successColor = prmSuccessColor ?? Colors.green;
