@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workout_application_development/configs/colors.dart';
+import 'package:workout_application_development/configs/styles.dart';
 
 class PrimaryButtonComponent extends StatelessWidget {
   final String text;
@@ -24,28 +25,11 @@ class PrimaryButtonComponent extends StatelessWidget {
       child: child ??
           Text(
             text,
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.normal,
+            style: getTextStyle(
               color: textColor,
             ),
           ),
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(64.0),
-          ),
-        ),
-        minimumSize: MaterialStateProperty.all(
-          const Size.fromWidth(double.infinity),
-        ),
-        backgroundColor: MaterialStateProperty.all(
-          backgroundColor,
-        ),
-        elevation: MaterialStateProperty.all(
-          0.0,
-        ),
-      ),
+      style: getButtonStyle(),
     );
   }
 }

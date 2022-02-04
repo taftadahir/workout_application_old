@@ -1,6 +1,6 @@
-// Application name
 import 'package:flutter/material.dart';
 
+// Application name
 const prmAppName = 'Workout Application';
 
 // Application Colors

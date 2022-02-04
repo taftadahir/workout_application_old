@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workout_application_development/configs/behaviors.dart';
 import 'package:workout_application_development/configs/colors.dart';
+import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/controllers/onboarding_controller.dart';
 import 'package:workout_application_development/models/onboarding_model.dart';
 import 'package:workout_application_development/views/components/dot_component.dart';
@@ -86,10 +87,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           datas.length - 1,
                         );
                       },
-                      child: const Text(
+                      child: Text(
                         'SKIP',
-                        style: TextStyle(
-                          fontSize: 16.0,
+                        style: getTextStyle(
                           fontWeight: FontWeight.w600,
                           color: blackLightColor,
                         ),
