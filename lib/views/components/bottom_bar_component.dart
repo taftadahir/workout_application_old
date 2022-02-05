@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:workout_application_development/configs/behaviors.dart';
 import 'package:workout_application_development/configs/colors.dart';
+import 'package:workout_application_development/configs/themes.dart';
 
 class BottomBarComponent extends StatelessWidget {
   final int selectedIndex;
@@ -14,7 +16,7 @@ class BottomBarComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
+      type: bottomNavigationBarType,
       elevation: 0,
       currentIndex: selectedIndex,
       showSelectedLabels: false,
@@ -23,16 +25,8 @@ class BottomBarComponent extends StatelessWidget {
       unselectedFontSize: 0,
       unselectedItemColor: blackLightColor,
       backgroundColor: whiteColor,
-      selectedIconTheme: const IconThemeData(
-        color: primaryColor,
-        opacity: 1,
-        size: 24.0,
-      ),
-      unselectedIconTheme: const IconThemeData(
-        color: blackLightColor,
-        opacity: 1,
-        size: 24.0,
-      ),
+      selectedIconTheme: bnbSelectedIconTheme,
+      unselectedIconTheme: bnbUnselectedIconTheme,
       onTap: (index) => onTap(index),
       items: const [
         BottomNavigationBarItem(

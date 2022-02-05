@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workout_application_development/configs/behaviors.dart';
 import 'package:workout_application_development/configs/colors.dart';
+import 'package:workout_application_development/configs/layouts.dart';
 import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/controllers/onboarding_controller.dart';
 import 'package:workout_application_development/models/onboarding_model.dart';
@@ -36,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: MediaQuery.of(context).size.height < 568.0
+        child: MediaQuery.of(context).size.height < minHeight
             ? Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: ListView(

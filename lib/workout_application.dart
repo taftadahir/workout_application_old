@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:workout_application_development/configs/parameters.dart';
 import 'package:workout_application_development/configs/themes.dart';
 import 'package:workout_application_development/views/screens/home_screen.dart';
+import 'package:workout_application_development/views/screens/login_screen.dart';
 import 'package:workout_application_development/views/screens/onboarding_screen.dart';
 
 class WorkoutApplication extends StatelessWidget {
@@ -12,6 +13,6 @@ class WorkoutApplication extends StatelessWidget {
         title: prmAppName,
         theme: defaultThemeData,
         debugShowCheckedModeBanner: false,
-        home: const HomeScreen(),
+        home: const LoginScreen(),
       );
 }
