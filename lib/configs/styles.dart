@@ -5,11 +5,13 @@ TextStyle getTextStyle({
   Color color = whiteColor,
   FontWeight fontWeight = FontWeight.normal,
   double fontSize = 16.0,
+  double? height,
 }) =>
     TextStyle(
       fontSize: fontSize,
       fontWeight: fontWeight,
       color: color,
+      height: height,
     );
 
 ButtonStyle getButtonStyle({
@@ -32,3 +34,17 @@ ButtonStyle getButtonStyle({
         0.0,
       ),
     );
+
+TextStyle fieldLabelStyle = getTextStyle(
+  color: blackColor,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle fieldErrorStyle = getTextStyle(
+  height: 0,
+  fontSize: 0,
+);
+
+TextStyle fieldHintStyle = getTextStyle(
+  color: greyColor,
+);
