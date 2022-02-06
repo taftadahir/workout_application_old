@@ -9,6 +9,7 @@ import 'package:workout_application_development/views/components/password_field_
 import 'package:workout_application_development/views/components/primary_button_component.dart';
 import 'package:workout_application_development/views/components/title_component.dart';
 import 'package:workout_application_development/views/screens/home_screen.dart';
+import 'package:workout_application_development/views/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
+                      builder: (context) => const RegisterScreen(),
                     ),
                   );
                 },
