@@ -5,7 +5,6 @@ import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/views/components/app_bar_component.dart';
 import 'dart:math' as math;
 
-import 'package:workout_application_development/views/components/bottom_bar_component.dart';
 import 'package:workout_application_development/views/components/program_card_component.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -39,14 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: BottomBarComponent(
-        selectedIndex: selectedIndex,
-        onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
