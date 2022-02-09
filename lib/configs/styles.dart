@@ -16,22 +16,29 @@ TextStyle getTextStyle({
 
 ButtonStyle getButtonStyle({
   Color backgroundColor = primaryColor,
-  double radius = 32.0,
+  double radius = 64.0,
+  bool fullWidth = true,
+  EdgeInsets? padding,
 }) =>
     ButtonStyle(
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(64.0),
+          borderRadius: BorderRadius.circular(radius),
         ),
       ),
-      minimumSize: MaterialStateProperty.all(
-        const Size.fromWidth(double.infinity),
-      ),
+      minimumSize: fullWidth
+          ? MaterialStateProperty.all(
+              const Size.fromWidth(double.infinity),
+            )
+          : null,
       backgroundColor: MaterialStateProperty.all(
         backgroundColor,
       ),
       elevation: MaterialStateProperty.all(
         0.0,
+      ),
+      padding:MaterialStateProperty.all(
+        padding
       ),
     );
 
