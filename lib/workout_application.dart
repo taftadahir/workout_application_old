@@ -5,6 +5,7 @@ import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/configs/themes.dart';
 import 'package:workout_application_development/views/components/app_bar_component.dart';
 import 'package:workout_application_development/views/components/bottom_bar_component.dart';
+import 'package:workout_application_development/views/screens/favorite_screen.dart';
 import 'package:workout_application_development/views/screens/home_screen.dart';
 import 'package:workout_application_development/views/screens/routine_screen.dart';
 import 'dart:math' as math;
@@ -21,7 +22,7 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const RoutineScreen(),
-    Container(),
+    const FavoriteScreen(),
     Container(),
     Container(),
   ];
@@ -89,7 +90,24 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
     ),
 
     // Favorite screen Appbar
-    AppBarComponent.getAppBarComponent(),
+    AppBarComponent.getAppBarComponent(
+      title: Text(
+        'Favorite Screen',
+        style: getTextStyle(
+          color: blackColor,
+        ),
+      ),
+      leading: IconButton(
+        onPressed: () {},
+        icon: Transform.rotate(
+          angle: math.pi / 2,
+          child: const Icon(
+            Icons.bar_chart_rounded,
+            color: blackColor,
+          ),
+        ),
+      ),
+    ),
 
     // Setting screen Appbar
     AppBarComponent.getAppBarComponent(),
