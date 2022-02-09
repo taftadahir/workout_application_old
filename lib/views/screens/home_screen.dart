@@ -7,86 +7,58 @@ import 'dart:math' as math;
 
 import 'package:workout_application_development/views/components/program_card_component.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex = 0;
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      appBar: AppBarComponent.getAppBarComponent(
-        title: Text(
-          'Home Screen',
-          style: getTextStyle(
-            color: blackColor,
-          ),
-        ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: Transform.rotate(
-            angle: math.pi / 2,
-            child: const Icon(
-              Icons.bar_chart_rounded,
-              color: blackColor,
-            ),
-          ),
-        ),
+    return ListView(
+      padding: const EdgeInsets.symmetric(
+        vertical: 24.0,
+        horizontal: 24.0,
       ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(
-          vertical: 24.0,
-          horizontal: 24.0,
-        ),
-        physics: physics,
-        children: [
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Calisthenics Program',
-                    style: getTextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: blackColor,
-                      fontSize: 18.0,
-                    ),
+      physics: physics,
+      children: [
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Calisthenics Program',
+                  style: getTextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: blackColor,
+                    fontSize: 18.0,
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 24.0,
-              ),
-              Column(
-                children: [
-                  const ProgramCardComponent(),
-                  const ProgramCardComponent(),
-                  const ProgramCardComponent(),
-                  const ProgramCardComponent(),
-                  const ProgramCardComponent(),
-                  const ProgramCardComponent(),
-                ]
-                    .map(
-                      (child) => Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 24.0,
-                        ),
-                        child: child,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            Column(
+              children: [
+                const ProgramCardComponent(),
+                const ProgramCardComponent(),
+                const ProgramCardComponent(),
+                const ProgramCardComponent(),
+                const ProgramCardComponent(),
+                const ProgramCardComponent(),
+              ]
+                  .map(
+                    (child) => Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 24.0,
                       ),
-                    )
-                    .toList(),
-              ),
-            ],
-          ),
-        ],
-      ),
+                      child: child,
+                    ),
+                  )
+                  .toList(),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
