@@ -13,88 +13,48 @@ class RoutineScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: whiteColor,
-      appBar: AppBarComponent.getAppBarComponent(
-        title: Text(
-          'Routine',
-          style: getTextStyle(
-            color: blackColor,
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 24.0,
+        right: 24.0,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const CalendarComponent(),
+          const SizedBox(
+            height: 24.0,
           ),
-        ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: Transform.rotate(
-            angle: math.pi / 2,
-            child: const Icon(
-              Icons.bar_chart_rounded,
+          Text(
+            'Workouts',
+            style: getTextStyle(
+              fontWeight: FontWeight.w600,
               color: blackColor,
             ),
           ),
-        ),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 24.0),
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Start',
-                style: getTextStyle(
-                  color: blackColor,
-                ),
-              ),
-              style: getButtonStyle(
-                fullWidth: false,
-                radius: 8.0,
-                backgroundColor: whiteLightColor,
-              ),
+          const SizedBox(
+            height: 16.0,
+          ),
+          Expanded(
+            child: ListView(
+              physics: physics,
+              children: const [
+                WorkoutCardComponent(),
+                WorkoutCardComponent(),
+                WorkoutCardComponent(),
+                WorkoutCardComponent(),
+                WorkoutCardComponent(),
+              ]
+                  .map(
+                    (child) => Container(
+                      child: child,
+                      margin: const EdgeInsets.only(bottom: 16.0),
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(
-          left: 24.0,
-          right: 24.0,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CalendarComponent(),
-            const SizedBox(
-              height: 24.0,
-            ),
-            Text(
-              'Workouts',
-              style: getTextStyle(
-                fontWeight: FontWeight.w600,
-                color: blackColor,
-              ),
-            ),
-            const SizedBox(
-              height: 16.0,
-            ),
-            Expanded(
-              child: ListView(
-                physics: physics,
-                children: const [
-                  WorkoutCardComponent(),
-                  WorkoutCardComponent(),
-                  WorkoutCardComponent(),
-                  WorkoutCardComponent(),
-                  WorkoutCardComponent(),
-                ]
-                    .map(
-                      (child) => Container(
-                        child: child,
-                        margin: const EdgeInsets.only(bottom: 16.0),
-                      ),
-                    )
-                    .toList(),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
