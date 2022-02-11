@@ -5,8 +5,8 @@ import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/configs/themes.dart';
 import 'package:workout_application_development/views/components/app_bar_component.dart';
 import 'package:workout_application_development/views/components/bottom_bar_component.dart';
-import 'package:workout_application_development/views/components/exercise_bottom_sheet_component.dart';
 import 'package:workout_application_development/views/screens/favorite_screen.dart';
+import 'package:workout_application_development/views/screens/history_screen.dart';
 import 'package:workout_application_development/views/screens/home_screen.dart';
 import 'package:workout_application_development/views/screens/routine_screen.dart';
 import 'dart:math' as math;
@@ -27,7 +27,7 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
     const RoutineScreen(),
     const FavoriteScreen(),
     const SettingScreen(),
-    Container(),
+    const HistoryScreen(),
   ];
 
   final List<AppBar> _appbars = [
@@ -131,7 +131,33 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
     ),
 
     // History screen Appbar
-    AppBarComponent.getAppBarComponent(),
+    AppBarComponent.getAppBarComponent(
+      title: Text(
+        'History',
+        style: getTextStyle(
+          color: blackColor,
+        ),
+      ),
+      leading: IconButton(
+        onPressed: () {},
+        icon:  Transform.rotate(
+          angle: math.pi / 2,
+          child: const Icon(
+            Icons.bar_chart_rounded,
+            color: blackColor,
+          ),
+        ),
+      ),
+      actions: [
+        Container(
+          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 24.0),
+          child: IconButton(
+            icon: const Icon(Icons.filter_alt_rounded),
+            onPressed: () {},
+          ),
+        ),
+      ],
+    ),
   ];
 
   @override
