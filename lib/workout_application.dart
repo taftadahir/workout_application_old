@@ -5,10 +5,13 @@ import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/configs/themes.dart';
 import 'package:workout_application_development/views/components/app_bar_component.dart';
 import 'package:workout_application_development/views/components/bottom_bar_component.dart';
+import 'package:workout_application_development/views/components/exercise_bottom_sheet_component.dart';
 import 'package:workout_application_development/views/screens/favorite_screen.dart';
 import 'package:workout_application_development/views/screens/home_screen.dart';
 import 'package:workout_application_development/views/screens/routine_screen.dart';
 import 'dart:math' as math;
+
+import 'package:workout_application_development/views/screens/setting_screen.dart';
 
 class WorkoutApplication extends StatefulWidget {
   const WorkoutApplication({Key? key}) : super(key: key);
@@ -23,13 +26,11 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
     const HomeScreen(),
     const RoutineScreen(),
     const FavoriteScreen(),
-    Container(),
+    const SettingScreen(),
     Container(),
   ];
 
-
   final List<AppBar> _appbars = [
-
     // Home screen Appbar
     AppBarComponent.getAppBarComponent(
       title: Text(
@@ -110,7 +111,24 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
     ),
 
     // Setting screen Appbar
-    AppBarComponent.getAppBarComponent(),
+    AppBarComponent.getAppBarComponent(
+      title: Text(
+        'Setting Screen',
+        style: getTextStyle(
+          color: blackColor,
+        ),
+      ),
+      leading: IconButton(
+        onPressed: () {},
+        icon: Transform.rotate(
+          angle: math.pi / 2,
+          child: const Icon(
+            Icons.bar_chart_rounded,
+            color: blackColor,
+          ),
+        ),
+      ),
+    ),
 
     // History screen Appbar
     AppBarComponent.getAppBarComponent(),
