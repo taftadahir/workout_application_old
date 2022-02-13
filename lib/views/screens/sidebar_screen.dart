@@ -3,6 +3,7 @@ import 'package:workout_application_development/configs/colors.dart';
 import 'package:workout_application_development/configs/parameters.dart';
 import 'package:workout_application_development/configs/styles.dart';
 import 'package:workout_application_development/views/components/sidebar_item_component.dart';
+import 'package:workout_application_development/views/screens/profile_screen.dart';
 import 'package:workout_application_development/workout_application.dart';
 
 class SidebarScreen extends StatelessWidget {
@@ -75,9 +76,7 @@ class SidebarScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => WorkoutApplication(
-                          index: 0,
-                        ),
+                        builder: (_) => const ProfileScreen(),
                       ),
                     );
                   },
@@ -142,14 +141,6 @@ class SidebarScreen extends StatelessWidget {
                 SidebarItemComponent(
                   icon: Icons.bubble_chart_rounded,
                   title: 'About Us',
-                  onTap: () {},
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                SidebarItemComponent(
-                  icon: Icons.logout,
-                  title: 'Logout',
                   onTap: () {},
                 ),
                 const SizedBox(
