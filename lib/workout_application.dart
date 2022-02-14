@@ -15,7 +15,8 @@ import 'package:workout_application_development/views/screens/setting_screen.dar
 import 'package:workout_application_development/views/screens/sidebar_screen.dart';
 
 class WorkoutApplication extends StatefulWidget {
-  const WorkoutApplication({Key? key}) : super(key: key);
+  int index;
+   WorkoutApplication({Key? key, this.index = 0}) : super(key: key);
 
   @override
   State<WorkoutApplication> createState() => _WorkoutApplicationState();
@@ -173,6 +174,13 @@ class _WorkoutApplicationState extends State<WorkoutApplication> {
       ];
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _selectedIndex = widget.index;
+  }
 
   @override
   Widget build(BuildContext context) => MaterialApp(

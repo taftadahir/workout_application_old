@@ -37,9 +37,7 @@ ButtonStyle getButtonStyle({
       elevation: MaterialStateProperty.all(
         0.0,
       ),
-      padding:MaterialStateProperty.all(
-        padding
-      ),
+      padding: MaterialStateProperty.all(padding),
     );
 
 TextStyle fieldLabelStyle = getTextStyle(

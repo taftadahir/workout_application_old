@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:workout_application_development/configs/behaviors.dart';
 import 'package:workout_application_development/configs/colors.dart';
 import 'package:workout_application_development/configs/styles.dart';
+import 'package:workout_application_development/controllers/exercise_controller.dart';
+import 'package:workout_application_development/models/exercise_model.dart';
 import 'package:workout_application_development/views/components/exercise_card_component.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -26,31 +28,30 @@ class FavoriteScreen extends StatelessWidget {
               color: blackColor,
             ),
           ),
-          const SizedBox(height: 16.0,),
-          Expanded(
+          const SizedBox(
+            height: 16.0,
+          ),
+          SizedBox(
+            height: 352.0,
             child: ListView(
+              scrollDirection: Axis.horizontal,
               physics: physics,
               children: [
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-                const ExerciseCardComponent(),
-              ]
-                  .map(
-                    (child) => Padding(
-                      padding: const EdgeInsets.only(
-                        bottom: 16.0,
-                      ),
-                      child: child,
-                    ),
-                  )
-                  .toList(),
+                Wrap(
+                  runSpacing: 16.0,
+                  direction: Axis.vertical,
+                  children: ExerciseController.getMyFavoriteExercise()
+                      .map(
+                        (exercise) => Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: 16.0,
+                          ),
+                          child: ExerciseCardComponent(exercise: exercise,),
+                        ),
+                      )
+                      .toList(),
+                ),
+              ],
             ),
           ),
         ],
